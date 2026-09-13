@@ -56,6 +56,11 @@ public class DetalleServicio {
         this.repuesto = repuesto;
     }
 
+    // metodo
+    public double calcularSubtotal(){
+        return cantidad * costoUnitario;
+    }
+
     @Override
     public String toString() {
         return "DetalleServicio{" +
