@@ -1,10 +1,13 @@
-package co.edu.uniquindio.poo.tallerbicicletas.modell;
+package co.edu.uniquindio.poo.tallerbicicletas.model;
+
+import java.util.List;
 
 public class Cliente {
     private String documento;
     private String nombreCompleto;
     private String telefono;
     private String direccion;
+    private List<Cliente> listaClientes;
 
     public Cliente(String documento, String nombreCompleto, String telefono, String direccion) {
         this.documento = documento;
@@ -29,6 +32,10 @@ public class Cliente {
     public String getDireccion() {return direccion;
     }
     public void setDireccion(String direccion) {this.direccion = direccion;
+    }
+    public List<Cliente> getListaClientes() {return listaClientes;
+    }
+    public void setListaClientes(List<Cliente> listaClientes) {this.listaClientes = listaClientes;
     }
 
     @Override

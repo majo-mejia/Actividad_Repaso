@@ -1,4 +1,6 @@
-package co.edu.uniquindio.poo.tallerbicicletas.modell;
+package co.edu.uniquindio.poo.tallerbicicletas.model;
+
+import java.util.List;
 
 public class Bicicleta {
     private String marca;
@@ -6,14 +8,16 @@ public class Bicicleta {
     private String numeroMarco;
     private String anio;
     private TipoBicicleta tipoBicicleta;
+    private List<Bicicleta> listaBicicleta;
 
 
-    public Bicicleta(String marca, String color, String numeroMarco, String anio, TipoBicicleta tipoBicicleta) {
+    public Bicicleta(String marca, String color, String numeroMarco, String anio, TipoBicicleta tipoBicicleta, List<Bicicleta> listaBicicleta) {
         this.marca = marca;
         this.color = color;
         this.numeroMarco = numeroMarco;
         this.anio = anio;
         this.tipoBicicleta = tipoBicicleta;
+        this.listaBicicleta = listaBicicleta;
     }
 
     public String getMarca() {return marca;
@@ -32,6 +36,15 @@ public class Bicicleta {
     public String getAnio() {return anio;
     }
     public void setAnio(String anio) {this.anio = anio;
+    }
+
+    public TipoBicicleta getTipoBicicleta() {return tipoBicicleta;
+    }
+    public void setTipoBicicleta(TipoBicicleta tipoBicicleta) {this.tipoBicicleta = tipoBicicleta;
+    }
+    public List<Bicicleta> getListaBicicleta() {return listaBicicleta;
+    }
+    public void setListaBicicleta(List<Bicicleta> listaBicicleta) {this.listaBicicleta = listaBicicleta;
     }
 
     @Override

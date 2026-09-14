@@ -1,4 +1,4 @@
-package co.edu.uniquindio.poo.tallerbicicletas.modell;
+package co.edu.uniquindio.poo.tallerbicicletas.model;
 
 public enum TipoBicicleta {
     RUTA,
