@@ -76,7 +76,7 @@ public class MainController {
         listaRepuestos.setAll(taller.getRepuestos());
         listaOrdenes.setAll(taller.getOrdenes());
 
-        // CORRECCIÓN: "documento" y "nombreCompleto" tal como están en tu clase Cliente
+
         colDocCliente.setCellValueFactory(new PropertyValueFactory<>("documento"));
         colNomCliente.setCellValueFactory(new PropertyValueFactory<>("nombreCompleto"));
         colTelCliente.setCellValueFactory(new PropertyValueFactory<>("telefono"));
@@ -88,7 +88,7 @@ public class MainController {
         colSerialBici.setCellValueFactory(new PropertyValueFactory<>("numeroMarco"));
         colMarcaBici.setCellValueFactory(new PropertyValueFactory<>("marca"));
         colTipoBici.setCellValueFactory(cell -> new SimpleStringProperty(cell.getValue().getTipoBicicleta().toString()));
-        // CORRECCIÓN: Usando getNombreCompleto()
+
         colDuenoBici.setCellValueFactory(cell -> new SimpleStringProperty(cell.getValue().getCliente().getNombreCompleto()));
         tblBicicletas.setItems(listaBicicletas);
 
