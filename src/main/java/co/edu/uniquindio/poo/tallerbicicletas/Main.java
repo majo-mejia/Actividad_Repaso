@@ -14,7 +14,7 @@ public class Main extends Application {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("main-view.fxml"));
         Parent root = loader.load();
         Scene scene = new Scene(root, 900, 600);
-        stage.setTitle("Taller de Bicicletas");
+        stage.setTitle("\uD83D\uDEB2 Taller de Bicicletas ⚙\uFE0F");
         stage.setScene(scene);
         stage.show();
     }
