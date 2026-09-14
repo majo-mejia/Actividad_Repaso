@@ -15,7 +15,7 @@ public class TallerBicicleta {
     private List<Bicicleta> listaBicicletas;
     private List<OrdenServicio> listaOrdenServicios;
 
-    public TallerBicicleta(String nit, String nombreTallerBicicleta, String direccion) {
+    public TallerBicicleta() {
         this.nit = nit;
         this.nombreTallerBicicleta = nombreTallerBicicleta;
         this.direccion = direccion;
