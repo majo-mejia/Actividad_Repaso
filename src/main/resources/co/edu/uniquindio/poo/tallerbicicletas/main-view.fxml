@@ -7,7 +7,7 @@
 
 <TabPane xmlns="http://javafx.com/javafx"
          xmlns:fx="http://javafx.com/fxml"
-         fx:controller="co.edu.uniquindio.poo.tallerbicicletas.controllers.MainController"
+         fx:controller="co.edu.uniquindio.poo.tallerbicicletas.controller.MainController"
          tabClosingPolicy="UNAVAILABLE">
 
     <Tab text="Clientes">
