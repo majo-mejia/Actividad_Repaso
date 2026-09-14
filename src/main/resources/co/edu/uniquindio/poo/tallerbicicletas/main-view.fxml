@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<TabPane xmlns="http://javafx.com/javafx"
+         xmlns:fx="http://javafx.com/fxml"
+         fx:controller="co.edu.uniquindio.poo.tallerbicicletas.controllers.MainController"
+         tabClosingPolicy="UNAVAILABLE">
+
+    <Tab text="Clientes">
+        <AnchorPane>
+            <Label text="Aqui va el formulario de clientes" layoutX="20" layoutY="20"/>
+        </AnchorPane>
+    </Tab>
+
+    <Tab text="Bicicletas">
+        <AnchorPane>
+            <Label text="Aqui va el formulario de bicicletas" layoutX="20" layoutY="20"/>
+        </AnchorPane>
+    </Tab>
+
+    <Tab text="Mecanicos">
+        <AnchorPane>
+            <Label text="Aqui va el formulario de mecanicos" layoutX="20" layoutY="20"/>
+        </AnchorPane>
+    </Tab>
+
+    <Tab text="Repuestos">
+        <AnchorPane>
+            <Label text="Aqui va el formulario de repuestos" layoutX="20" layoutY="20"/>
+        </AnchorPane>
+    </Tab>
+
+    <Tab text="Nueva Orden">
+        <AnchorPane>
+            <Label text="Aqui va el formulario de nueva orden" layoutX="20" layoutY="20"/>
+        </AnchorPane>
+    </Tab>
+
+    <Tab text="Historial">
+        <AnchorPane>
+            <Label text="Aqui va la busqueda de historial por serial" layoutX="20" layoutY="20"/>
+        </AnchorPane>
+    </Tab>
+
+    <Tab text="Ordenes del dia">
+        <AnchorPane>
+            <Label text="Aqui va la busqueda de ordenes por fecha" layoutX="20" layoutY="20"/>
+        </AnchorPane>
+    </Tab>
+
+</TabPane>

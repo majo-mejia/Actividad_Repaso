@@ -1,4 +1,8 @@
+package co.edu.uniquindio.poo.tallerbicicletas.model;
+
 import co.edu.uniquindio.poo.tallerbicicletas.model.DetalleServicio;
+import co.edu.uniquindio.poo.tallerbicicletas.model.Mecanico;
+import co.edu.uniquindio.poo.tallerbicicletas.modell.Bicicleta;
 
 import java.time.LocalDate;
 import java.time.LocalTime;

@@ -6,14 +6,16 @@ public class Bicicleta {
     private String numeroMarco;
     private String anio;
     private TipoBicicleta tipoBicicleta;
+    private Cliente cliente;
 
 
-    public Bicicleta(String marca, String color, String numeroMarco, String anio, TipoBicicleta tipoBicicleta) {
+    public Bicicleta(String marca, String color, String numeroMarco, String anio, TipoBicicleta tipoBicicleta, Cliente cliente) {
         this.marca = marca;
         this.color = color;
         this.numeroMarco = numeroMarco;
         this.anio = anio;
         this.tipoBicicleta = tipoBicicleta;
+        this.cliente = cliente;
     }
 
     public String getMarca() {return marca;
@@ -33,9 +35,18 @@ public class Bicicleta {
     }
     public void setAnio(String anio) {this.anio = anio;
     }
+    public TipoBicicleta getTipoBicicleta() {return tipoBicicleta;
+    }
+    public void setTipoBicicleta(TipoBicicleta tipoBicicleta) {this.tipoBicicleta = tipoBicicleta;
+    }
+    public Cliente getCliente() {return cliente;
+    }
+    public void setCliente(Cliente cliente) {this.cliente = cliente;
+    }
 
     @Override
     public String toString() {
-        return marca + " " + color + " " + numeroMarco + " " + anio;
+        return marca + " " + tipoBicicleta + " " + color + " " + numeroMarco + " " + anio
+                + (cliente != null ? " (dueño: " + cliente.getNombreCompleto() + ")" : "");
     }
 }

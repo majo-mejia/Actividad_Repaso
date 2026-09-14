@@ -1,5 +1,7 @@
 package co.edu.uniquindio.poo.tallerbicicletas.model;
 
+import co.edu.uniquindio.poo.tallerbicicletas.modell.Repuesto;
+
 public class DetalleServicio {
 
     private String descripcion;
