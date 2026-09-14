@@ -1,55 +1,154 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Tab?>
-<?import javafx.scene.control.TabPane?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 
 <TabPane xmlns="http://javafx.com/javafx"
          xmlns:fx="http://javafx.com/fxml"
          fx:controller="co.edu.uniquindio.poo.tallerbicicletas.controllers.MainController"
          tabClosingPolicy="UNAVAILABLE">
 
+    <!-- CLIENTES -->
     <Tab text="Clientes">
-        <AnchorPane>
-            <Label text="Aqui va el formulario de clientes" layoutX="20" layoutY="20"/>
-        </AnchorPane>
+        <HBox spacing="20">
+            <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+            <VBox spacing="15" prefWidth="280">
+                <Label text="Registro de Cliente" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+                <TextField fx:id="txtDocCliente" promptText="Documento / Cédula"/>
+                <TextField fx:id="txtNomCliente" promptText="Nombre completo"/>
+                <TextField fx:id="txtTelCliente" promptText="Teléfono"/>
+                <TextField fx:id="txtDirCliente" promptText="Dirección"/>
+                <Button text="Registrar Cliente" onAction="#registrarCliente" prefWidth="280"/>
+            </VBox>
+            <TableView fx:id="tblClientes" HBox.hgrow="ALWAYS">
+                <columns>
+                    <TableColumn fx:id="colDocCliente" text="Documento" prefWidth="120"/>
+                    <TableColumn fx:id="colNomCliente" text="Nombre" prefWidth="150"/>
+                    <TableColumn fx:id="colTelCliente" text="Teléfono" prefWidth="100"/>
+                    <TableColumn fx:id="colDirCliente" text="Dirección" prefWidth="150"/>
+                </columns>
+            </TableView>
+        </HBox>
     </Tab>
 
+    <!-- BICICLETAS -->
     <Tab text="Bicicletas">
-        <AnchorPane>
-            <Label text="Aqui va el formulario de bicicletas" layoutX="20" layoutY="20"/>
-        </AnchorPane>
+        <HBox spacing="20">
+            <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+            <VBox spacing="10" prefWidth="250">
+                <Label text="Registrar Bicicleta" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+                <ComboBox fx:id="cmbClienteBicicleta" promptText="Seleccionar Cliente" prefWidth="250"/>
+                <ComboBox fx:id="cmbTipoBicicleta" promptText="Tipo de Bicicleta" prefWidth="250"/>
+                <TextField fx:id="txtMarcaBici" promptText="Marca"/>
+                <TextField fx:id="txtColorBici" promptText="Color"/>
+                <TextField fx:id="txtSerialBici" promptText="Número Marco / Serial"/>
+                <TextField fx:id="txtAnioBici" promptText="Año"/>
+                <Button text="Registrar Bicicleta" onAction="#registrarBicicleta" prefWidth="250"/>
+            </VBox>
+            <TableView fx:id="tblBicicletas" HBox.hgrow="ALWAYS">
+                <columns>
+                    <TableColumn fx:id="colSerialBici" text="Serial" prefWidth="100"/>
+                    <TableColumn fx:id="colMarcaBici" text="Marca" prefWidth="100"/>
+                    <TableColumn fx:id="colTipoBici" text="Tipo" prefWidth="100"/>
+                    <TableColumn fx:id="colDuenoBici" text="Dueño" prefWidth="150"/>
+                </columns>
+            </TableView>
+        </HBox>
     </Tab>
 
+    <!-- MECANICOS -->
     <Tab text="Mecanicos">
-        <AnchorPane>
-            <Label text="Aqui va el formulario de mecanicos" layoutX="20" layoutY="20"/>
-        </AnchorPane>
+        <HBox spacing="20">
+            <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+            <VBox spacing="10" prefWidth="250">
+                <Label text="Registrar Mecánico" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+                <TextField fx:id="txtNomMecanico" promptText="Nombre Completo"/>
+                <TextField fx:id="txtCodMecanico" promptText="Código de Certificado"/>
+                <ComboBox fx:id="cmbEspecialidadMecanico" promptText="Especialidad" prefWidth="250"/>
+                <Button text="Registrar Mecánico" onAction="#registrarMecanico" prefWidth="250"/>
+            </VBox>
+            <TableView fx:id="tblMecanicos" HBox.hgrow="ALWAYS">
+                <columns>
+                    <TableColumn fx:id="colCodMecanico" text="Código" prefWidth="100"/>
+                    <TableColumn fx:id="colNomMecanico" text="Nombre" prefWidth="150"/>
+                    <TableColumn fx:id="colEspMecanico" text="Especialidad" prefWidth="150"/>
+                </columns>
+            </TableView>
+        </HBox>
     </Tab>
 
-    <Tab text="Repuestos">
-        <AnchorPane>
-            <Label text="Aqui va el formulario de repuestos" layoutX="20" layoutY="20"/>
-        </AnchorPane>
+    <!-- REPUESTOS -->
+    <Tab text="Repuestos y Stock">
+        <HBox spacing="20">
+            <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+            <VBox spacing="10" prefWidth="250">
+                <Label text="Registrar Repuesto" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+                <TextField fx:id="txtCodRepuesto" promptText="Código del repuesto"/>
+                <TextField fx:id="txtNomRepuesto" promptText="Nombre del repuesto"/>
+                <TextField fx:id="txtPrecioRepuesto" promptText="Precio Unitario"/>
+                <TextField fx:id="txtStockRepuesto" promptText="Cantidad (Stock)"/>
+                <Button text="Registrar Repuesto" onAction="#registrarRepuesto" prefWidth="250"/>
+                <Separator/>
+                <Button text="⚠️ Revisar Stock Bajo" onAction="#revisarStockBajo" prefWidth="250"
+                        style="-fx-background-color: #ff9900; -fx-font-weight: bold;"/>
+            </VBox>
+            <TableView fx:id="tblRepuestos" HBox.hgrow="ALWAYS">
+                <columns>
+                    <TableColumn fx:id="colCodRepuesto" text="Código" prefWidth="100"/>
+                    <TableColumn fx:id="colNomRepuesto" text="Nombre" prefWidth="150"/>
+                    <TableColumn fx:id="colStockRepuesto" text="Stock" prefWidth="100"/>
+                </columns>
+            </TableView>
+        </HBox>
     </Tab>
 
+    <!-- NUEVA ORDEN -->
     <Tab text="Nueva Orden">
-        <AnchorPane>
-            <Label text="Aqui va el formulario de nueva orden" layoutX="20" layoutY="20"/>
-        </AnchorPane>
+        <HBox spacing="20">
+            <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+            <VBox spacing="15" prefWidth="300">
+                <Label text="Crear Orden de Servicio" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+                <DatePicker fx:id="dpFechaOrden" promptText="Fecha de Ingreso" prefWidth="300"/>
+                <ComboBox fx:id="cmbBiciOrden" promptText="Seleccionar Bicicleta" prefWidth="300"/>
+                <ComboBox fx:id="cmbMecanicoOrden" promptText="Seleccionar Mecánico" prefWidth="300"/>
+                <TextArea fx:id="txtMotivoOrden" promptText="Motivo del ingreso..." prefRowCount="3"/>
+                <Button text="Crear Orden" onAction="#crearOrden" prefWidth="300"/>
+            </VBox>
+            <TableView fx:id="tblOrdenes" HBox.hgrow="ALWAYS">
+                <columns>
+                    <TableColumn fx:id="colFechaOrden" text="Fecha" prefWidth="100"/>
+                    <TableColumn fx:id="colBiciOrden" text="Bicicleta (Serial)" prefWidth="150"/>
+                    <TableColumn fx:id="colMecOrden" text="Mecánico" prefWidth="150"/>
+                </columns>
+            </TableView>
+        </HBox>
     </Tab>
 
+    <!-- HISTORIAL -->
     <Tab text="Historial">
-        <AnchorPane>
-            <Label text="Aqui va la busqueda de historial por serial" layoutX="20" layoutY="20"/>
-        </AnchorPane>
+        <VBox spacing="15">
+            <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+            <HBox spacing="10">
+                <Label text="Buscar por Serial de Bicicleta:"/>
+                <TextField fx:id="txtBusquedaSerial" promptText="Ej: MARCO123"/>
+                <Button text="Buscar Historial" onAction="#buscarHistorialSerial"/>
+            </HBox>
+            <ListView fx:id="lstHistorial" VBox.vgrow="ALWAYS"/>
+        </VBox>
     </Tab>
 
+    <!-- ORDENES DEL DIA -->
     <Tab text="Ordenes del dia">
-        <AnchorPane>
-            <Label text="Aqui va la busqueda de ordenes por fecha" layoutX="20" layoutY="20"/>
-        </AnchorPane>
+        <VBox spacing="15">
+            <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+            <HBox spacing="10">
+                <Label text="Seleccione una Fecha:"/>
+                <DatePicker fx:id="dpBusquedaFecha"/>
+                <Button text="Buscar Órdenes" onAction="#buscarOrdenesDia"/>
+            </HBox>
+            <ListView fx:id="lstOrdenesDia" VBox.vgrow="ALWAYS"/>
+        </VBox>
     </Tab>
 
 </TabPane>
