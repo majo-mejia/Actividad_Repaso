@@ -62,7 +62,7 @@ public class TallerBicicletasTest {
 
     @Test
     public void testRegistrarRepuesto() {
-        Repuesto nuevoRepuesto = new Repuesto("R003", "Líquido de frenos", 15000, 10);
+        Repuesto nuevoRepuesto = new Repuesto("R003 ", "Líquido de frenos", 15000, 10);
         taller.registrarRepuesto(nuevoRepuesto);
 
         assertEquals(3, taller.getRepuestos().size());
